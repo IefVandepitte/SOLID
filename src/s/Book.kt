@@ -7,7 +7,7 @@ package s
  * A class in Kotlin can have a primary constructor which is part of the class header.
  */
 
-class book(author: String) {
+class book(author: Author) {
 
 
     /**
@@ -22,7 +22,7 @@ class book(author: String) {
     /**
      * If the class has a primary constructor, each secondary constructor needs to delegate to the primary constructor
      */
-    constructor(author : String,  text: String,  title : String) : this(author){
+    constructor(author : Author,  text: String,  title : String) : this(author){
 
     }
 

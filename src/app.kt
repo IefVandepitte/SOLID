@@ -1,5 +1,7 @@
+import com.sun.org.apache.bcel.internal.generic.NEW
 import o.AreaCalculator
 import o.Rectangle
+import s.Author
 import s.book
 
 
@@ -9,11 +11,11 @@ import s.book
  */
 fun main(args: Array<String>){
 
-    val SOLID = args[0];
+    val SOLID = args[0]
     when(SOLID){
         "S" -> {
-            val jBook = book("Jens Buysse", "Inhoud van het boek", "Titel van het boek")
-            val hBook = book("Harm De Weird")
+            val jBook = book(Author("Jens Buysse"), "Inhoud van het boek", "Titel van het boek")
+            val hBook = book(Author("Harm De Weird"))
         }
         "O" -> {
             val rec1 = Rectangle(5,10)

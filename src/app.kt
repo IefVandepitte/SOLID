@@ -1,6 +1,5 @@
-import com.sun.org.apache.bcel.internal.generic.NEW
-import o.AreaCalculator
-import o.Rectangle
+import l.Square
+import o.*
 import s.Author
 import s.book
 
@@ -20,9 +19,23 @@ fun main(args: Array<String>){
         "O" -> {
             val rec1 = Rectangle(5,10)
             val rec2 = Rectangle(3,4)
-            val list : MutableList<Rectangle> = mutableListOf(rec1,rec2)
-            val areaCalc = AreaCalculator()
-            areaCalc.calculateArea(list)
+            val square = Square(3)
+            val circle1 = Circle(2)
+            val list1 : MutableList<Shape> = mutableListOf(circle1)
+            var Calc: ShapeCalculator = CircleCalculator()
+            Calc.calculateArea(list1)
+            val list : MutableList<Shape> = mutableListOf(rec1,rec2, square)
+            Calc = RectangleCalculator()
+            Calc.calculateArea(list)
+            Calc.calculateArea(list1)
+        }
+        "L" -> {
+            var shape : Shape = Square(12)
+            shape.confessColour()
+            shape = Rectangle(1,2)
+            shape.confessColour()
+            shape = Circle(12)
+            shape.confessColour()
         }
     }
 

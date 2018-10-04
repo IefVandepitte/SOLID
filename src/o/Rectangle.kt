@@ -8,7 +8,7 @@ package o
  * The open annotation on a class is the opposite of Java's final:
  * it allows others to inherit from this class.
  */
-open class Rectangle(open var width: Int = 0 , open var height: Int = 0){
+open class Rectangle (open var width: Int = 0 , open var height: Int = 0): Shape(){
 
 
 }

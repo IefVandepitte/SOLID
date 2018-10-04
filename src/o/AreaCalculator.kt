@@ -1,13 +1,20 @@
 package o
 
-class AreaCalculator{
+class AreaCalculator : ShapeCalculator {
 
-    fun calculateArea(shapes : MutableCollection<Rectangle>) : Unit {
+
+    override fun calculateArea(shapes : MutableCollection<Shape>) : Unit {
         var area = 0
+        var isRectangle = false
         for (rectangle in shapes){
-            area += rectangle.height * rectangle.width
+            if (rectangle !is Rectangle){
+                println("Cannot  use Rectangle logic on ${rectangle::class.simpleName}")
+            } else{
+                isRectangle = true
+                area += rectangle.height * rectangle.width
+            }
         }
-        println("The calculated area is : $area")
+       if(isRectangle) println("The calculated area is : $area")
     }
 
 }

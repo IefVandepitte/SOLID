@@ -1,3 +1,5 @@
+import i.AndroidComponent
+import i.DesktopComponent
 import l.Square
 import o.*
 import s.Author
@@ -36,6 +38,16 @@ fun main(args: Array<String>){
             shape.confessColour()
             shape = Circle(12)
             shape.confessColour()
+        }
+        "I" -> {
+            var android = AndroidComponent()
+            android.swipe("swipe")
+            android.touch("touch")
+            android.validate()
+
+            val desktop = DesktopComponent()
+            desktop.mouseover("hover")
+            desktop.validate()
         }
     }
 

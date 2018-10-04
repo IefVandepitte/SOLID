@@ -1,6 +1,6 @@
 package i
 
-class AndroidComponent : Component {
+class AndroidComponent : TouchComponent {
 
 
     /**
@@ -8,10 +8,12 @@ class AndroidComponent : Component {
      * And unlike Java, Kotlin requires explicit annotations
      * for overridable members (we call them open) and for overrides
      */
-    override fun mouseover(event: String) {
-        throw UnsupportedOperationException("mouse click not supported by android devices")
 
-    }
+    // no longer necessary
+//    override fun mouseover(event: String) {
+//        throw UnsupportedOperationException("mouse click not supported by android devices")
+//
+//    }
 
     override fun touch(event: String) {
         println("Touch Event Fired")

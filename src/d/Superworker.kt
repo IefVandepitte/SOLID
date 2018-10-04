@@ -1,14 +1,14 @@
 package d
 
-class Superworker(name: String) {
+class Superworker(name: String) : IWorker {
 
-    var name : String
+    override var name : String = ""
 
     init {
         this.name = name
     }
 
-    fun work(){
+    override fun work(){
         println("$name is doing awesome superwork")
     }
 }

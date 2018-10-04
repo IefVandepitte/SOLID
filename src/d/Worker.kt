@@ -1,14 +1,14 @@
 package d
 
-class Worker(name: String) {
+class Worker(name: String) :IWorker {
 
-    var name : String
+    override var name : String = ""
 
     init {
         this.name = name;
     }
 
-    fun work(){
+    override fun work(){
         println("$name is working hard!")
     }
 }

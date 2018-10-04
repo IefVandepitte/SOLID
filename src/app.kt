@@ -1,9 +1,13 @@
+import d.Manager
+import d.Superworker
+import d.Worker
 import i.AndroidComponent
 import i.DesktopComponent
 import l.Square
 import o.*
 import s.Author
 import s.book
+import java.awt.LayoutManager2
 
 
 /**
@@ -48,6 +52,16 @@ fun main(args: Array<String>){
             val desktop = DesktopComponent()
             desktop.mouseover("hover")
             desktop.validate()
+        }
+        "D" -> {
+            val worker = Worker("Ief")
+            val superWorker = Superworker("Super Ief")
+            var manager1 = Manager(worker)
+            manager1.manage()
+            manager1.worker= superWorker
+            manager1.manage()
+            var manager2 = Manager(superWorker)
+            manager2.manage()
         }
     }
 
